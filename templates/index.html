@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breast Cancer Prediction</title>
+</head>
+<body>
+    <h1>Breast Cancer Prediction</h1>
+    <form action="{{ url_for('predict')}}" method="POST">
+        <label for="clump_thickness">Clump Thickness:</label>
+        <input type="number" name="clump_thickness" step="any"><br><br>
+
+        <label for="uniformity_of_cell_size">Uniformity of Cell Size:</label>
+        <input type="number" name="uniformity_of_cell_size" step="any"><br><br>
+
+        <label for="uniformity_of_cell_shape">Uniformity of Cell Shape:</label>
+        <input type="number" name="uniformity_of_cell_shape" step="any"><br><br>
+
+        <label for="marginal_adhesion">Marginal Adhesion:</label>
+        <input type="number" name="marginal_adhesion" step="any"><br><br>
+
+        <label for="single_epithelial_cell_size">Single Epithelial Cell Size:</label>
+        <input type="number" name="single_epithelial_cell_size" step="any"><br><br>
+
+        <label for="bare_nuclei">Bare Nuclei:</label>
+        <input type="number" name="bare_nuclei" step="any"><br><br>
+
+        <label for="bland_chromatin">Bland Chromatin:</label>
+        <input type="number" name="bland_chromatin" step="any"><br><br>
+
+        <label for="normal_nucleoli">Normal Nucleoli:</label>
+        <input type="number" name="normal_nucleoli" step="any"><br><br>
+
+        <label for="mitoses">Mitoses:</label>
+        <input type="number" name="mitoses" step="any"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <h2>Prediction: {{ prediction }}</h2>
+</body>
+</html>
