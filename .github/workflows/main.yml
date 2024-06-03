@@ -10,21 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: '3.x'
 
     - name: Install dependencies
       run: |
         python -m venv venv
-        source venv/bin/activate
+        . venv/bin/activate
         pip install -r requirements.txt
 
     - name: Deploy to Heroku
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: |
-        heroku git:remote -a your-heroku-app-name
+        heroku git:remote -a ana680assignment2-0db27d19de03
         git push heroku main
+
